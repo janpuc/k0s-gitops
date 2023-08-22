@@ -1,2 +1,8 @@
-.sops.yaml
-*.sops.yaml
+.DS_Store
+Thumbs.db
+.decrypted~*
+*.agekey
+*.pub
+*.key
+*.pem
+kubeconfig*
