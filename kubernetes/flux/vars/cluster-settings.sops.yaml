@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-    name: cluster-secrets
+    name: cluster-settings
     namespace: flux-system
 stringData:
     TIMEZONE: ENC[AES256_GCM,data:ZiA8p5YpGT7LU0T+KA==,iv:pLBORmlsFfAACirsKdc1HQNqo85jlq3ofJ0mz2/vDf8=,tag:BYfBBx/oWdvQaTkGe5jfWA==,type:str]
@@ -23,8 +23,8 @@ sops:
             N1Q0SE9ucFhWaVQzTithdHpoYnpURUUKk4QrcJg3Fp4gswzuq0oLQ8IFXxTQOnwQ
             hTb7Kl368HxMBZZzzh2WiQseULh1gi9lSKcYw9s+5VhM46Qqn6Isdw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-08-22T21:39:46Z"
-    mac: ENC[AES256_GCM,data:2rY/JX4QnkTZC1ZVq+hRLo7NzNkW3wM357xpF3v2eTqyVKDcqvnKTuUlN6v+4rEvQ5HZ9ySEuV0pHj7wkj5ifETtep0klGqqcZWGgNxplwN7bzgzJ9AiTlNdIkP4L9k7854KrItj8OQRr2mVIBksTk4LNqiO3jqPH6pijTYqQIE=,iv:25mtBz/Gzm1BQnm2wh7dHUuExAs0gWx68g0sKUZRW5U=,tag:7DLYUBu4nO/daohw0a0nFw==,type:str]
+    lastmodified: "2023-08-22T21:42:26Z"
+    mac: ENC[AES256_GCM,data:oGcT7PalLPhu0zk3rjPcdAIStdXDfY42kjNRtnWHj39TtYmirMJtEcS8sxllCWgfI2O3PA/nK4IMoiiUM6YVW/TBYd3Ysye3aVO45w08QMBfYo0bnFgnahP5Vz65yXPqJ7jGFR/EeaXlhHfd7cO1d2DFiMzGDxHHi/cnhhXwtnc=,iv:iJ9o+w84rkI/ND5viLtk13upHJ4+dPgDEMm1MLqx7mQ=,tag:Y2aPuA5za3u09yLc3W6L5g==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
