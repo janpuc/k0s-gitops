@@ -1,0 +1,16 @@
+---
+ignore: |
+  *.sops.*
+  gotk-components.yaml
+extends: default
+rules:
+  braces:
+    forbid: non-empty
+  empty-values:
+    forbid-in-block-mappings: true
+    forbid-in-flow-mappings: true
+  indentation:
+    spaces: 2
+    check-multi-line-strings: true
+  line-length:
+    allow-non-breakable-inline-mappings: true

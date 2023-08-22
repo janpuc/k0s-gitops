@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/yamllint.json": "file:///Users/janpucilowski/Development/k0s/k0s-gitops/.github/lint/.yamllint.yaml"
+    }
+}
