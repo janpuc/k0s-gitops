@@ -1,0 +1,30 @@
+# yamllint disable
+apiVersion: v1
+kind: Secret
+metadata:
+    name: cluster-secrets
+    namespace: flux-system
+stringData:
+    TIMEZONE: ENC[AES256_GCM,data:ZiA8p5YpGT7LU0T+KA==,iv:pLBORmlsFfAACirsKdc1HQNqo85jlq3ofJ0mz2/vDf8=,tag:BYfBBx/oWdvQaTkGe5jfWA==,type:str]
+    CLUSTER_NAME: ENC[AES256_GCM,data:Z6ocxfFdCYwR5Q==,iv:ZuWH4lEwj633Dit1Riy8PVrdfG5GCnfe3Cr99jwHQAc=,tag:Vw7kyg02yXrmvhXOXwzIVg==,type:str]
+    CLUSTER_CLOUDFLARE_TUNNEL_ID: ENC[AES256_GCM,data:6AnQDjoXuKmmz4TCWYRMTCOmz8HhoLYxeNNJViMT+A4HmHej,iv:Io+vDzDZocHpIWZZ9690WFoD0RJThv9HixgDHOzZc+U=,tag:UJsItyCL0JmzHUXKbv5Hvg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1myxsdyjgwefpljpsvf0n6pvjr4n9ygz0nh3zy7wkfjnqdg54jayqwaqqfm
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTVVpCOFlJa2FVN1hpZ1R3
+            SnBqRlVHMjZVaFY0S1p2czJ3d0ZIQWtuU0YwCmtFMGpaSTFUaWErSFJWc1pKQ3Jm
+            WVRHaHlVUjRQQ1FpaGhXS2N5MUIvZXMKLS0tIEVLVkJVNS9QaU5lVElMbEtLZSta
+            N1Q0SE9ucFhWaVQzTithdHpoYnpURUUKk4QrcJg3Fp4gswzuq0oLQ8IFXxTQOnwQ
+            hTb7Kl368HxMBZZzzh2WiQseULh1gi9lSKcYw9s+5VhM46Qqn6Isdw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-08-22T21:39:46Z"
+    mac: ENC[AES256_GCM,data:2rY/JX4QnkTZC1ZVq+hRLo7NzNkW3wM357xpF3v2eTqyVKDcqvnKTuUlN6v+4rEvQ5HZ9ySEuV0pHj7wkj5ifETtep0klGqqcZWGgNxplwN7bzgzJ9AiTlNdIkP4L9k7854KrItj8OQRr2mVIBksTk4LNqiO3jqPH6pijTYqQIE=,iv:25mtBz/Gzm1BQnm2wh7dHUuExAs0gWx68g0sKUZRW5U=,tag:7DLYUBu4nO/daohw0a0nFw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
