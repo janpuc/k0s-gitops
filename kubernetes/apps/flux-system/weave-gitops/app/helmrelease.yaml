@@ -33,6 +33,7 @@ spec:
       username: admin
     ingress:
       enabled: true
+      className: traefik
       hosts:
         - host: &host "gitops.${SECRET_DOMAIN}"
           paths:
