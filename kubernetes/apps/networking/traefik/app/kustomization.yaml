@@ -6,3 +6,4 @@ kind: Kustomization
 namespace: networking
 resources:
   - ./helmrelease.yaml
+  - ./ingressroute.yaml
