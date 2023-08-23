@@ -1,0 +1,10 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: default
+  namespace: networking
+spec:
+  addresses:
+    - ${SINGLE_NODE_IP}
+  autoAssign: true
