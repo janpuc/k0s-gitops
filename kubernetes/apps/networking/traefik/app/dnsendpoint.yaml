@@ -5,7 +5,7 @@ metadata:
   name: traefik
 spec:
   endpoints:
-    - dnsName: traefiik.${SECRET_DOMAIN}
+    - dnsName: traefik.${SECRET_DOMAIN}
       recordType: CNAME
       targets:
         - k0s.${SECRET_DOMAIN}
