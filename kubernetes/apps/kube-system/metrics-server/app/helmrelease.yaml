@@ -1,0 +1,33 @@
+---
+# yamllint disable-line rule:line-length
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: weave-gitops
+  namespace: flux-system
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: weave-gitops
+      version: 4.0.28
+      sourceRef:
+        kind: HelmRepository
+        name: weaveworks
+        namespace: flux-system
+  maxHistory: 2
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    adminUser:
+      create: true
+      passwordHash: $2a$10$mrf6W0OBYT9vRgx8eP9NDuNy5T7xwLq0wrMADMPFCSUkNXQ1fYCS2
+      username: admin
