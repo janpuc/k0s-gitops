@@ -5,16 +5,16 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: weave-gitops
-  namespace: flux-system
+  namespace: kube-system
 spec:
   interval: 30m
   chart:
     spec:
-      chart: weave-gitops
-      version: 4.0.28
+      chart: metrics-server
+      version: 3.11.0
       sourceRef:
         kind: HelmRepository
-        name: weaveworks
+        name: metrics-server
         namespace: flux-system
   maxHistory: 2
   install:
@@ -27,7 +27,12 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    adminUser:
-      create: true
-      passwordHash: $2a$10$mrf6W0OBYT9vRgx8eP9NDuNy5T7xwLq0wrMADMPFCSUkNXQ1fYCS2
-      username: admin
+    args:
+      - --kubelet-insecure-tls
+      - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+      - --kubelet-use-node-status-port
+      - --metric-resolution=15s
+    metrics:
+      enabled: true
+    serviceMonitor:
+      enabled: true
