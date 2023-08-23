@@ -31,3 +31,13 @@ spec:
       create: true
       passwordHash: $2a$10$mrf6W0OBYT9vRgx8eP9NDuNy5T7xwLq0wrMADMPFCSUkNXQ1fYCS2
       username: admin
+    ingress:
+      enabled: true
+      hosts:
+        - host: &host "gitops.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - *host
