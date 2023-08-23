@@ -29,6 +29,3 @@ spec:
   values:
     image:
       tag: v3.0.0-beta3
-    ingressRoute:
-      dashboard:
-        entryPoints: ["traefik", "web", "websecure"]
