@@ -6,5 +6,5 @@ metadata:
   namespace: networking
 spec:
   addresses:
-    - ${SINGLE_NODE_IP}/32
+    - ${PUBLIC_NODE_IP}/32
   autoAssign: true
