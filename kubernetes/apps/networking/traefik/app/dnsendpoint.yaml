@@ -1,0 +1,14 @@
+---
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: traefik
+spec:
+  endpoints:
+    - dnsName: traefiik.${SECRET_DOMAIN}
+      recordType: CNAME
+      targets:
+        - k0s.${SECRET_DOMAIN}
+      providerSpecific:
+        - name: external-dns.alpha.kubernetes.io/cloudflare-proxied
+          value: "true"
