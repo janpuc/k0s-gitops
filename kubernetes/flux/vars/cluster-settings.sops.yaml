@@ -7,7 +7,6 @@ metadata:
 stringData:
     TIMEZONE: ENC[AES256_GCM,data:ZiA8p5YpGT7LU0T+KA==,iv:pLBORmlsFfAACirsKdc1HQNqo85jlq3ofJ0mz2/vDf8=,tag:BYfBBx/oWdvQaTkGe5jfWA==,type:str]
     CLUSTER_NAME: ENC[AES256_GCM,data:Z6ocxfFdCYwR5Q==,iv:ZuWH4lEwj633Dit1Riy8PVrdfG5GCnfe3Cr99jwHQAc=,tag:Vw7kyg02yXrmvhXOXwzIVg==,type:str]
-    CLUSTER_CLOUDFLARE_TUNNEL_ID: ENC[AES256_GCM,data:6AnQDjoXuKmmz4TCWYRMTCOmz8HhoLYxeNNJViMT+A4HmHej,iv:Io+vDzDZocHpIWZZ9690WFoD0RJThv9HixgDHOzZc+U=,tag:UJsItyCL0JmzHUXKbv5Hvg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -23,8 +22,8 @@ sops:
             N1Q0SE9ucFhWaVQzTithdHpoYnpURUUKk4QrcJg3Fp4gswzuq0oLQ8IFXxTQOnwQ
             hTb7Kl368HxMBZZzzh2WiQseULh1gi9lSKcYw9s+5VhM46Qqn6Isdw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-08-22T21:42:26Z"
-    mac: ENC[AES256_GCM,data:oGcT7PalLPhu0zk3rjPcdAIStdXDfY42kjNRtnWHj39TtYmirMJtEcS8sxllCWgfI2O3PA/nK4IMoiiUM6YVW/TBYd3Ysye3aVO45w08QMBfYo0bnFgnahP5Vz65yXPqJ7jGFR/EeaXlhHfd7cO1d2DFiMzGDxHHi/cnhhXwtnc=,iv:iJ9o+w84rkI/ND5viLtk13upHJ4+dPgDEMm1MLqx7mQ=,tag:Y2aPuA5za3u09yLc3W6L5g==,type:str]
+    lastmodified: "2023-08-23T06:28:32Z"
+    mac: ENC[AES256_GCM,data:2KsOHYI7uNiD6DMmH4N5JqSX8X3lZsSxC9/e2zlFj58gNaZBwR5qDyKPr5nu0JbL31MjzzM+2xOUXc/ZRKVkU1tad16a+/Yl0K/sGxfNdKltoo9u2ojv9MNggjUx9rG5QcK0uYc2j7Pd+ZYiIbs3mesw4jNomQZw41TGkQkPkM4=,iv:kwGIflbH4goQYfrQhIMAVxbzG0PLMsVWPKWfSblqeNY=,tag:H5BknmJWBAAfeSPyxeWVTQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
