@@ -9,4 +9,4 @@ metadata:
 spec:
   type: oci
   interval: 5m
-  url: oci://ghcr.io/weaveworks/char
+  url: oci://ghcr.io/weaveworks/charts
