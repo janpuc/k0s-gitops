@@ -30,5 +30,5 @@ spec:
     image:
       tag: v3.0.0-beta3
     service:
-      externalIPs:
-        - ${SINGLE_NODE_PRIVATE_IP} # https://github.com/cilium/cilium/issues/24351
+      annotations:
+        io.cilium/lb-ipam-ips: ${SINGLE_NODE_PRIVATE_IP} # https://github.com/cilium/cilium/issues/24351
