@@ -1,0 +1,15 @@
+---
+version: "3"
+
+tasks:
+
+  install:
+    desc: Install k0s on the nodes
+    cmds:
+      - k0sctl apply --config k0sctl.yaml
+      - k0sctl kubeconfig > kubeconfig
+      - cilium install
+
+  nuke:
+    desc: Uninstall k0s on the nodes
+    cmd: k0sctl reset --config k0sctl.yaml
