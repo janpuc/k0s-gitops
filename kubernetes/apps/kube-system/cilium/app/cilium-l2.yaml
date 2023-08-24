@@ -19,4 +19,4 @@ metadata:
   name: pool
 spec:
   cidrs:
-    - cidr: ${SINGLE_NODE_PRIVATE_IP}/32
+    - cidr: ${SINGLE_NODE_PRIVATE_IP}/30 # https://github.com/cilium/cilium/issues/24351
