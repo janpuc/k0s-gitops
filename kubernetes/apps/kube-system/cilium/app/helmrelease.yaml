@@ -38,6 +38,8 @@ spec:
           - port-distribution
           - icmp
           - http
+      ui:
+        enabled: true
     ipv4NativeRoutingCIDR: 10.32.0.0/16
     l2announcements:
       enabled: true
