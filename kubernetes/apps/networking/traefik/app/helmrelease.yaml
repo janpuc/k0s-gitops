@@ -31,4 +31,4 @@ spec:
       tag: v3.0.0-beta3
     service:
       annotations:
-        io.cilium/lb-ipam-ips: ${SINGLE_NODE_PRIVATE_IP} # https://github.com/cilium/cilium/issues/24351
+        io.cilium/lb-ipam-ips: ${SINGLE_NODE_IP} # https://github.com/cilium/cilium/issues/24351
