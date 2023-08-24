@@ -6,3 +6,4 @@ Thumbs.db
 *.key
 *.pem
 kubeconfig*
+k0sctl.yaml
