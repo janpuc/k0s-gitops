@@ -27,6 +27,17 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    hubble:
+      enabled: true
+      metrics:
+        enabled:
+          - dns:query
+          - drop
+          - tcp
+          - flow
+          - port-distribution
+          - icmp
+          - http
     ipv4NativeRoutingCIDR: 10.32.0.0/16
     l2announcements:
       enabled: true
