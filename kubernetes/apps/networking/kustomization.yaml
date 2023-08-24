@@ -8,5 +8,4 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./external-dns/ks.yaml
-  # - ./metallb/ks.yaml
   - ./traefik/ks.yaml
