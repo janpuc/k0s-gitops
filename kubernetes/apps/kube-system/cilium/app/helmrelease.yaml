@@ -38,6 +38,8 @@ spec:
           - port-distribution
           - icmp
           - http
+      relay:
+        enabled: true
       ui:
         enabled: true
     ipv4NativeRoutingCIDR: 10.32.0.0/16
