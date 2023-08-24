@@ -8,7 +8,6 @@ tasks:
     cmds:
       - k0sctl apply --config k0sctl.yaml
       - k0sctl kubeconfig > kubeconfig
-      - cilium install
 
   nuke:
     desc: Uninstall k0s on the nodes
