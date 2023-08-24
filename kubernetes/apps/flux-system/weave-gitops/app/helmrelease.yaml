@@ -33,7 +33,8 @@ spec:
       username: admin
     ingress:
       enabled: true
-      className: traefik
+      annotations:
+        external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
       hosts:
         - host: &host "gitops.${SECRET_DOMAIN}"
           paths:
