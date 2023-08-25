@@ -31,13 +31,13 @@ metadata:
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: devin.kray@gmail.com
+    email: ${SECRET_ACME_EMAIL}
     privateKeySecretRef:
-      name: ${SECRET_ACME_EMAIL}
+      name: letsencrypt-staging
     solvers:
       - dns01:
           cloudflare:
-            email: devin.kray@gmail.com
+            email: ${SECRET_ACME_EMAIL}
             apiKeySecretRef:
               name: cloudflare-secret
               key: api-key
