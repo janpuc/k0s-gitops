@@ -34,6 +34,8 @@ spec:
         persistence:
           enabled: false
       architecture: standalone
+      replica:
+        replicaCount: 0
       metrics:
         enabled:
           serviceMonitor:
