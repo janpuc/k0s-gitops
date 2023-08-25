@@ -11,6 +11,4 @@ rules:
     forbid-in-flow-mappings: true
   indentation:
     spaces: 2
-  line-length:
-    max: 130
-    allow-non-breakable-inline-mappings: true
+  line-length: disable
