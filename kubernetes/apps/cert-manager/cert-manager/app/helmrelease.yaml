@@ -14,7 +14,7 @@ spec:
       version: v1.12.3
       sourceRef:
         kind: HelmRepository
-        name: jetstacks
+        name: jetstack
         namespace: cert-manager
   maxHistory: 2
   install:
