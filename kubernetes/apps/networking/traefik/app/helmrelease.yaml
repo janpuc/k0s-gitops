@@ -32,6 +32,26 @@ spec:
     service:
       annotations:
         io.cilium/lb-ipam-ips: ${SINGLE_NODE_PRIVATE_IP}
+    env:
+      - name: CF_DNS_API_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: cloudflare-secret
+            key: api-token
     tlsStore:
       default:
-        secretName: secret-domain-tls
+        defaultGeneratedCert:
+          resolver: letsencrypt-production
+          domain:
+            main: ${SECRET_DOMAIN}
+            sans:
+              - ${SECRET_DOMAIN}
+              - "*.${SECRET_DOMAIN}"
+    certResolvers:
+      letsencrypt:
+        email: ${SECRET_ACME_EMAIL}
+        dnsChallenge:
+          provider: cloudflare
+          resolvers:
+            - 1.1.1.1
+            - 9.9.9.9
