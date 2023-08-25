@@ -34,5 +34,6 @@ spec:
         # https://github.com/cilium/cilium/issues/24351
         io.cilium/lb-ipam-ips: ${SINGLE_NODE_PRIVATE_IP}
     tlsStore:
-      defaultCertificate:
-        secretName: secret-domain-tls
+      default:
+        defaultCertificate:
+          secretName: secret-domain-tls
