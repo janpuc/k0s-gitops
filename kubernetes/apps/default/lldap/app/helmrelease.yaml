@@ -42,10 +42,9 @@ spec:
       tag: latest-alpine@sha256:a6a8215f8bb286ae9ce6e4f6ef303a543094a954d0091da9a62aee2b391ed023
     env:
       TZ: Europe/Warsaw
-      LLDAP_VERBOSE: true
       LLDAP_HTTP_PORT: &port 80
       LLDAP_HTTP_URL: https://lldap.${SECRET_DOMAIN}
-      LLDAP_LDAP_PORT: &ldapPort 389
+      LLDAP_LDAP_PORT: &ldapPort 3389
       LLDAP_LDAP_BASE_DN: dc=home,dc=arpa
     envFrom: *envFrom
     service:
