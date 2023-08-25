@@ -1,5 +1,4 @@
 ---
-# yamllint disable-line rule:line-length
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/clusterissuer_v1.json
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -22,7 +21,6 @@ spec:
           dnsZones:
             - ${SECRET_DOMAIN}
 ---
-# yamllint disable-line rule:line-lengths
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/clusterissuer_v1.json
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer

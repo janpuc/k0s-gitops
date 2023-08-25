@@ -1,5 +1,4 @@
 ---
-# yamllint disable-line rule:line-length
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/source.toolkit.fluxcd.io/gitrepository_v1.json
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
