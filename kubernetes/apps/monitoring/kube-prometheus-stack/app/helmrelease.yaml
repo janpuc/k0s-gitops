@@ -92,6 +92,8 @@ spec:
       ingress:
         enabled: true
         pathType: Prefix
+        annotations:
+          external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
         hosts:
           - &host "prometheus.${SECRET_DOMAIN}"
         tls:
