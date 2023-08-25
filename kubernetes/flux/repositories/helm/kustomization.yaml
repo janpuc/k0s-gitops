@@ -11,4 +11,5 @@ resources:
   - ./metallb.yaml
   - ./metrics-server.yaml
   - ./traefik.yaml
+  - ./prometheus-community.yaml
   - ./weaveworks.yaml
