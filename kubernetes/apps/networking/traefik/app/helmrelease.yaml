@@ -31,27 +31,8 @@ spec:
       tag: v3.0.0-beta3
     service:
       annotations:
+        # https://github.com/cilium/cilium/issues/24351
         io.cilium/lb-ipam-ips: ${SINGLE_NODE_PRIVATE_IP}
-    env:
-      - name: CF_DNS_API_TOKEN
-        valueFrom:
-          secretKeyRef:
-            name: cloudflare-secret
-            key: api-token
     tlsStore:
       default:
-        defaultGeneratedCert:
-          resolver: letsencrypt-production
-          domain:
-            main: ${SECRET_DOMAIN}
-            sans:
-              - ${SECRET_DOMAIN}
-              - "*.${SECRET_DOMAIN}"
-    certResolvers:
-      letsencrypt:
-        email: ${SECRET_ACME_EMAIL}
-        dnsChallenge:
-          provider: cloudflare
-          resolvers:
-            - 1.1.1.1
-            - 9.9.9.9
+        secretName: secret-domain-tls
