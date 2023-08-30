@@ -48,4 +48,4 @@ spec:
                 path: /spec/template/spec/containers/1/env/-
                 value:
                   - name: PLUGIN_DIR
-                    value: /var/lib/k0s/kubelet/plugins/ru.yandex.s3.csi
+                    value: "/var/lib/k0s/kubelet/plugins/ru.yandex.s3.csi"
