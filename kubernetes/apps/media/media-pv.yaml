@@ -6,7 +6,7 @@ metadata:
 spec:
   storageClassName: csi-s3
   capacity:
-    storage: 100Gi
+    storage: 50Gi
   accessModes:
     - ReadWriteMany
   claimRef:
@@ -41,4 +41,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 100Gi
+      storage: 50Gi
