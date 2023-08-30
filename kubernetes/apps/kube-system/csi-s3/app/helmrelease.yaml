@@ -27,6 +27,7 @@ spec:
     keepHistory: false
   values:
     images:
+      # https://github.com/yandex-cloud/k8s-csi-s3/pull/51
       registrar: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.8.0
       provisioner: registry.k8s.io/sig-storage/csi-provisioner:v3.3.0
       csi: ghcr.io/motoki317/k8s-csi-s3:0.36.2-p1
