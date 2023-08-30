@@ -44,7 +44,6 @@ spec:
               version: v1
               kind: DaemonSet
               name: csi-s3
-              namespace: media
             patch: |
               - op: add
                 path: /spec/template/spec/containers/1/env/-
