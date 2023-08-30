@@ -11,3 +11,4 @@ resources:
   - ./csi-s3/ks.yaml
   - ./local-path-provisioner/ks.yaml
   # - ./metrics-server/ks.yaml
+  - ./reloader/ks.yaml
