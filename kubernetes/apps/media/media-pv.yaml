@@ -33,6 +33,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: media-s3-pvc
+  namespace: media
 spec:
   # Empty storage class disables dynamic provisioning
   storageClassName: ""
