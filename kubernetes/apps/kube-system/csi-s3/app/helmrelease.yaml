@@ -41,8 +41,10 @@ spec:
         patches:
           - target:
               version: v1
+              group: apps
               kind: DaemonSet
               name: csi-s3
+              namespace: media
             patch: |
               - op: add
                 path: /spec/template/spec/containers/1/env/-
