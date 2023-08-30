@@ -33,3 +33,4 @@ spec:
     secret:
       create: false
       name: csi-s3-secret
+    kubeletPath: /var/lib/k0s/kubelet
