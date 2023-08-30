@@ -7,5 +7,6 @@ resources:
   - ./media-pv.yaml
   - ./namespace.yaml
   # Flux-Kustomizations
+  - ./autobrr/ks.yaml
   - ./media-browser/ks.yaml
   - ./wizarr/ks.yaml
