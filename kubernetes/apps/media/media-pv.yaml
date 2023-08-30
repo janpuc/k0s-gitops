@@ -6,7 +6,7 @@ metadata:
 spec:
   storageClassName: csi-s3
   capacity:
-    storage: 50Gi
+    storage: 1000Gi
   accessModes:
     - ReadWriteMany
   claimRef:
@@ -24,7 +24,7 @@ spec:
       name: csi-s3-secret
       namespace: kube-system
     volumeAttributes:
-      capacity: 10Gi
+      capacity: 1000Gi
       mounter: geesefs
       options: --memory-limit 1000 --dir-mode 0777 --file-mode 0666
     volumeHandle: k0s/media
@@ -41,4 +41,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 50Gi
+      storage: 1000Gi
