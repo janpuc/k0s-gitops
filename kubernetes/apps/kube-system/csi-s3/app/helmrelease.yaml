@@ -47,7 +47,7 @@ spec:
               namespace: media
             patch: |
               - op: add
-                path: /spec/template/spec/containers/1/env/-
+                path: /spec/template/spec/containers/1/env/2
                 value:
-                  - name: PLUGIN_DIR
-                    value: /var/lib/k0s/kubelet/plugins/ru.yandex.s3.csi
+                  name: PLUGIN_DIR
+                  value: /var/lib/k0s/kubelet/plugins/ru.yandex.s3.csi
