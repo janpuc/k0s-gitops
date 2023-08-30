@@ -10,9 +10,6 @@ spec:
   routes:
     - match: Host(`traefik.${SECRET_DOMAIN}`)
       kind: Rule
-      middlewares:
-        - name: forwardauth-authelia
-          namespace: security
       services:
         - name: api@internal
           kind: TraefikService

@@ -48,7 +48,6 @@ spec:
   dependsOn:
     - name: cluster-apps-traefik
     - name: cluster-apps-external-dns
-    - name: cluster-apps-authelia
   path: ./kubernetes/apps/networking/traefik/dashboard
   prune: true
   sourceRef:
