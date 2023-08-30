@@ -91,6 +91,9 @@ spec:
         pathType: Prefix
         annotations:
           external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
+          traefik.ingress.kubernetes.io/router.tls: "true"
+          traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+          traefik.ingress.kubernetes.io/router.middlewares: security-forwardauth-authelia@kubernetescrd
         hosts:
           - &host "prometheus.${SECRET_DOMAIN}"
         tls:
