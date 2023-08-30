@@ -38,16 +38,16 @@ spec:
   # https://github.com/yandex-cloud/k8s-csi-s3/issues/71
   postRenderers:
     - kustomize:
-        patches:
+        patchesJson6902:
           - target:
               version: v1
               group: apps
               kind: DaemonSet
               name: csi-s3
               namespace: media
-            patch: |
+            patch:
               - op: add
-                path: /spec/template/spec/containers/1/env/2
+                path: /spec/template/spec/containers/1/env/-
                 value:
-                  name: PLUGIN_DIR
-                  value: /var/lib/k0s/kubelet/plugins/ru.yandex.s3.csi
+                  - name: PLUGIN_DIR
+                    value: /var/lib/k0s/kubelet/plugins/ru.yandex.s3.csi
