@@ -8,7 +8,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-cloudnative-pg-cluster
-  path: ./kubernetes/apps/default/lldap/app
+  path: ./kubernetes/apps/security/lldap/app
   prune: true
   sourceRef:
     kind: GitRepository
