@@ -8,3 +8,4 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./media-browser/ks.yaml
+  - ./wizarr/ks.yaml
