@@ -29,7 +29,7 @@ spec:
     images:
       registrar: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.8.0
       provisioner: registry.k8s.io/sig-storage/csi-provisioner:v3.3.0
-      csi: docker pull ghcr.io/motoki317/k8s-csi-s3:0.36.2-p1
+      csi: ghcr.io/motoki317/k8s-csi-s3:0.36.2-p1
     secret:
       create: false
       name: csi-s3-secret
