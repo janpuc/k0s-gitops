@@ -6,6 +6,5 @@ metadata:
   name: csi-s3
   namespace: flux-system
 spec:
-  type: oci
-  interval: 5m
-  url: oci://cr.yandex/yc-marketplace/yandex-cloud/csi-s3
+  interval: 2h
+  url: https://yandex-cloud.github.io/k8s-csi-s3/charts/
