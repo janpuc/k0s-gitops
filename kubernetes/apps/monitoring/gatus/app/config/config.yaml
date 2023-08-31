@@ -37,3 +37,55 @@ endpoints:
       - "[STATUS] == 200"
     alerts:
       - type: pushover
+  - name: ${ADDITIONAL_MONITORING_NAME_1}
+    group: remote
+    ui:
+      hide-hostname: true
+      hide-url: true
+    url: https://${ADDITIONAL_MONITORING_DOMAIN_1}
+    interval: 1m
+    client:
+      dns-resolver: tcp://1.1.1.1:53
+    conditions:
+      - "[STATUS] == 200"
+    alerts:
+      - type: pushover
+  - name: ${ADDITIONAL_MONITORING_NAME_2}
+    group: remote
+    ui:
+      hide-hostname: true
+      hide-url: true
+    url: https://${ADDITIONAL_MONITORING_DOMAIN_2}
+    interval: 1m
+    client:
+      dns-resolver: tcp://1.1.1.1:53
+    conditions:
+      - "[STATUS] == 200"
+    alerts:
+      - type: pushover
+  - name: ${ADDITIONAL_MONITORING_NAME_3}
+    group: remote
+    ui:
+      hide-hostname: true
+      hide-url: true
+    url: https://${ADDITIONAL_MONITORING_DOMAIN_3}
+    interval: 1m
+    client:
+      dns-resolver: tcp://1.1.1.1:53
+    conditions:
+      - "[STATUS] == 200"
+    alerts:
+      - type: pushover
+  - name: ${ADDITIONAL_MONITORING_NAME_4}
+    group: remote
+    ui:
+      hide-hostname: true
+      hide-url: true
+    url: https://${ADDITIONAL_MONITORING_DOMAIN_4}
+    interval: 1m
+    client:
+      dns-resolver: tcp://1.1.1.1:53
+    conditions:
+      - "[STATUS] == 200"
+    alerts:
+      - type: pushover
