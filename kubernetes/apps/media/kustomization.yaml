@@ -9,4 +9,5 @@ resources:
   # Flux-Kustomizations
   - ./autobrr/ks.yaml
   - ./media-browser/ks.yaml
+  - ./overseerr/ks.yaml
   - ./wizarr/ks.yaml
