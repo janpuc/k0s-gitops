@@ -11,7 +11,7 @@ data:
     endpoints:
       - name: lldap
         group: internal
-        url: http://lldap.svc.security.cluster.local:8000
+        url: http://lldap.security.svc.cluster.local:8000
         interval: 1m
         client:
           dns-resolver: tcp://1.1.1.1:53
