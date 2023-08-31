@@ -86,7 +86,7 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
           traefik.ingress.kubernetes.io/router.middlewares: security-forwardauth-authelia@kubernetescrd
         hosts:
-          - host: &host status.devbu.io
+          - host: &host status.${SECRET_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
