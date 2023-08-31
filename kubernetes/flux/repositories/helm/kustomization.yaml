@@ -10,6 +10,7 @@ resources:
   - ./coredns.yaml
   - ./csi-s3.yaml
   - ./external-dns.yaml
+  - ./external-secrets.yaml
   - ./jetstack.yaml
   - ./metallb.yaml
   - ./metrics-server.yaml
