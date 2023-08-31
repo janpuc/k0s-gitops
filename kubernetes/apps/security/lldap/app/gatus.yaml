@@ -12,7 +12,12 @@ data:
       - name: lldap
         group: internal
         url: http://lldap.security.svc.cluster.local:8000
+        headers:
+          Host: lldap.${SECRET_DOMAIN}
         interval: 1m
+        ui:
+          hide-hostname: true
+          hide-url: true
         client:
           dns-resolver: tcp://1.1.1.1:53
         conditions:
