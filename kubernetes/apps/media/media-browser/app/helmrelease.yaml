@@ -84,8 +84,7 @@ spec:
     persistence:
       media:
         enabled: true
-        existingClaim: media-s3-pvc
-        mountPath: /media
+        existingClaim: media
     resources:
       requests:
         cpu: 10m
