@@ -10,13 +10,14 @@ data:
   config.yaml: |
     endpoints:
       - name: lldap
-        group: guarded
-        url: https://lldap.${SECRET_DOMAIN}
+        group: internal
+        ui:
+          hide-hostname: true
+          hide-url: true
+        url: http://lldap.security.svc.cluster.local:8000
         headers:
           Host: lldap.${SECRET_DOMAIN}
         interval: 1m
-        client:
-          dns-resolver: tcp://1.1.1.1:53
         conditions:
           - "[STATUS] == 200"
         alerts:
