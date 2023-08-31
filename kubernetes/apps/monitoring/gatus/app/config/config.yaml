@@ -26,6 +26,9 @@ connectivity:
 endpoints:
   - name: status
     group: external
+    ui:
+      hide-hostname: true
+      hide-url: true
     url: https://status.${SECRET_DOMAIN}
     interval: 1m
     client:

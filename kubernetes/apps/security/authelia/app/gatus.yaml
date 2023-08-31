@@ -11,6 +11,9 @@ data:
     endpoints:
       - name: authelia
         group: external
+        ui:
+          hide-hostname: true
+          hide-url: true
         url: https://auth.${SECRET_DOMAIN}
         interval: 1m
         client:
