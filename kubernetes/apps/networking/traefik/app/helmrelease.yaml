@@ -32,6 +32,8 @@ spec:
       annotations:
         # https://github.com/cilium/cilium/issues/24351
         io.cilium/lb-ipam-ips: ${SINGLE_NODE_PRIVATE_IP}
+      spec:
+        externalTrafficPolicy: Local
     tlsStore:
       default:
         defaultCertificate:
