@@ -32,23 +32,51 @@ spec:
         imagePullPolicy: IfNotPresent
         envFrom: &envFrom
           - secretRef:
-              name: autobrr-secret
+              name: gatus-secret
+      02-config-sync:
+        image: ghcr.io/kiwigrid/k8s-sidecar:1.25.1
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: FOLDER
+            value: /config
+          - name: LABEL
+            value: gatus.io/enabled
+          - name: NAMESPACE
+            value: ALL
+          - name: RESOURCE
+            value: both
+          - name: UNIQUE_FILENAMES
+            value: "true"
+          - name: METHOD
+            value: LIST
+        volumeMounts:
+          - name: config
+            mountPath: /config
     controller:
-      type: statefulset
+      annotations:
+        reloader.stakater.com/auto: "true"
     image:
-      repository: ghcr.io/autobrr/autobrr
-      tag: develop@sha256:cad1136b75f201565a992b6c5c7dd66d1bf287d461dc704d672a68936822b7d7
+      repository: ghcr.io/twin/gatus
+      tag: v5.5.1
     env:
-      AUTOBRR__CHECKFORUPDATES: "false"
-      AUTOBRR__HOST: 0.0.0.0
-      AUTOBRR__PORT: &port 8000
-      AUTOBRR__LOGLEVEL: DEBUG
+      TZ: Europe/Warsaw
+      GATUS_CONFIG_PATH: /config
+      CUSTOM_WEB_PORT: &port 8000
     envFrom: *envFrom
     service:
       main:
         ports:
           http:
             port: *port
+    serviceMonitor:
+      main:
+        enabled: true
+        endpoints:
+          - port: http
+            scheme: http
+            path: /metrics
+            interval: 1m
+            scrapeTimeout: 10s
     ingress:
       main:
         enabled: true
@@ -58,7 +86,7 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
           traefik.ingress.kubernetes.io/router.middlewares: security-forwardauth-authelia@kubernetescrd
         hosts:
-          - host: &host "{{ .Release.Name }}.devbu.io"
+          - host: &host status.devbu.io
             paths:
               - path: /
                 pathType: Prefix
@@ -77,13 +105,33 @@ spec:
       config-file:
         enabled: true
         type: configMap
-        name: autobrr-configmap
-        subPath: config.toml
-        mountPath: /config/config.toml
+        name: gatus-configmap
+        mountPath: /config/config.yaml
+        subPath: config.yaml
         readOnly: true
     resources:
       requests:
-        memory: 250Mi
-        cpu: 10m
+        cpu: 100m
+        memory: 100Mi
       limits:
         memory: 500Mi
+    sidecars:
+      config-sync:
+        image: ghcr.io/kiwigrid/k8s-sidecar:1.25.1
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: FOLDER
+            value: /config
+          - name: LABEL
+            value: gatus.io/enabled
+          - name: NAMESPACE
+            value: ALL
+          - name: RESOURCE
+            value: both
+          - name: UNIQUE_FILENAMES
+            value: "true"
+          - name: METHOD
+            value: WATCH
+        volumeMounts:
+          - name: config
+            mountPath: /config
