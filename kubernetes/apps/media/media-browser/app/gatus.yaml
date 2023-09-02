@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: media-browser-gatus-ep
+  namespace: media
+  labels:
+    gatus.io/enabled: "true"
+data:
+  config.yaml: |
+    endpoints:
+      - name: media-browser
+        group: internal
+        ui:
+          hide-hostname: true
+          hide-url: true
+        url: http://media-browser.media.svc.cluster.local:8000
+        headers:
+          Host: media-browser.janpuc.com
+        interval: 1m
+        conditions:
+          - "[STATUS] == 200"
+        alerts:
+          - type: pushover
