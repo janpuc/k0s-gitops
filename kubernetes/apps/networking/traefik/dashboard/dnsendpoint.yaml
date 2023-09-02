@@ -5,10 +5,10 @@ metadata:
   name: traefik
 spec:
   endpoints:
-    - dnsName: traefik.${SECRET_DOMAIN}
+    - dnsName: traefik.janpuc.com
       recordType: CNAME
       targets:
-        - k0s.${SECRET_DOMAIN}
+        - k0s.janpuc.com
       providerSpecific:
         - name: external-dns.alpha.kubernetes.io/cloudflare-proxied
           value: "true"

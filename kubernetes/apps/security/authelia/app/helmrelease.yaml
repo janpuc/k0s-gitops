@@ -57,15 +57,15 @@ spec:
       AUTHELIA_AUTHENTICATION_BACKEND_LDAP_USERS_FILTER: (&({username_attribute}={input})(objectClass=person))
       AUTHELIA_AUTHENTICATION_BACKEND_PASSWORD_RESET_DISABLE: "true"
       AUTHELIA_AUTHENTICATION_BACKEND_REFRESH_INTERVAL: 1m
-      AUTHELIA_DEFAULT_REDIRECTION_URL: https://auth.${SECRET_DOMAIN}
+      AUTHELIA_DEFAULT_REDIRECTION_URL: https://auth.janpuc.com
       AUTHELIA_DUO_API_DISABLE: "true"
       AUTHELIA_LOG_LEVEL: info
       AUTHELIA_NOTIFIER_DISABLE_STARTUP_CHECK: "true"
       AUTHELIA_NOTIFIER_SMTP_ADDRESS: smtp://smtp.gmail.com:587
-      AUTHELIA_NOTIFIER_SMTP_SENDER: Authelia <noreply@${SECRET_DOMAIN}>
+      AUTHELIA_NOTIFIER_SMTP_SENDER: Authelia <noreply@janpuc.com>
       AUTHELIA_SERVER_DISABLE_HEALTHCHECK: "true"
       AUTHELIA_SERVER_ADDRESS: tcp://0.0.0.0:8000
-      AUTHELIA_SESSION_DOMAIN: ${SECRET_DOMAIN}
+      AUTHELIA_SESSION_DOMAIN: janpuc.com
       AUTHELIA_SESSION_NAME: authelia-k0s-gitops
       AUTHELIA_SESSION_REDIS_DATABASE_INDEX: 14
       AUTHELIA_SESSION_REDIS_HOST: redis.database.svc.cluster.local
@@ -112,13 +112,13 @@ spec:
       main:
         enabled: true
         annotations:
-          external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/target: k0s.janpuc.com
           traefik.ingress.kubernetes.io/router.tls: "true"
           traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
           traefik.ingress.kubernetes.io/router.tls.options: security-authelia@kubernetescrd
           traefik.ingress.kubernetes.io/router.middlewares: security-chain-authelia@kubernetescrd
         hosts:
-          - host: &host auth.${SECRET_DOMAIN}
+          - host: &host auth.janpuc.com
             paths:
               - path: /
                 pathType: Prefix

@@ -10,7 +10,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: ${SECRET_DOMAIN}
+  commonName: janpuc.com
   dnsNames:
-    - ${SECRET_DOMAIN}
-    - "*.${SECRET_DOMAIN}"
+    - janpuc.com
+    - "*.janpuc.com"

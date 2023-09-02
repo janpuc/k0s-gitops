@@ -8,7 +8,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.${SECRET_DOMAIN}`)
+    - match: Host(`traefik.janpuc.com`)
       kind: Rule
       services:
         - name: api@internal
