@@ -14,7 +14,7 @@ data:
         ui:
           hide-hostname: true
           hide-url: true
-        url: https://auth.${SECRET_DOMAIN}
+        url: https://auth.janpuc.com
         interval: 1m
         client:
           dns-resolver: tcp://1.1.1.1:53
