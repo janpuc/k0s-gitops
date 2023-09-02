@@ -11,5 +11,6 @@ resources:
   - ./media-browser/ks.yaml
   - ./overseerr/ks.yaml
   - ./radarr/ks.yaml
+  - ./recyclarr/ks.yaml
   - ./sonarr/ks.yaml
   - ./wizarr/ks.yaml
