@@ -16,7 +16,7 @@ data:
           hide-url: true
         url: http://overseerr.media.svc.cluster.local:8000
         headers:
-          Host: requests.${SECRET_DOMAIN}
+          Host: requests.janpuc.com
         interval: 1m
         conditions:
           - "[STATUS] == 200"
