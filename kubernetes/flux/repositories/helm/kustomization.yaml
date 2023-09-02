@@ -9,6 +9,7 @@ resources:
   - ./cloudnative-pg.yaml
   - ./coredns.yaml
   - ./csi-s3.yaml
+  - ./descheduler.yaml
   - ./external-dns.yaml
   - ./external-secrets.yaml
   - ./jetstack.yaml
