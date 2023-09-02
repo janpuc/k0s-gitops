@@ -81,11 +81,11 @@ spec:
       main:
         enabled: true
         annotations:
-          external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/target: k0s.janpuc.com
           traefik.ingress.kubernetes.io/router.tls: "true"
           traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
         hosts:
-          - host: &host status.${SECRET_DOMAIN}
+          - host: &host status.janpuc.com
             paths:
               - path: /
                 pathType: Prefix

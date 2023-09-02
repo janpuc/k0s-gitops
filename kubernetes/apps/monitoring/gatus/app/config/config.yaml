@@ -29,7 +29,7 @@ endpoints:
     ui:
       hide-hostname: true
       hide-url: true
-    url: https://status.${SECRET_DOMAIN}
+    url: https://status.janpuc.com
     interval: 1m
     client:
       dns-resolver: tcp://1.1.1.1:53
@@ -37,12 +37,12 @@ endpoints:
       - "[STATUS] == 200"
     alerts:
       - type: pushover
-  - name: ${ADDITIONAL_MONITORING_NAME_1}
+  - name: grupa66
     group: remote
     ui:
       hide-hostname: true
       hide-url: true
-    url: https://${ADDITIONAL_MONITORING_DOMAIN_1}
+    url: https://grupa66.pl
     interval: 1m
     client:
       dns-resolver: tcp://1.1.1.1:53
@@ -50,12 +50,12 @@ endpoints:
       - "[STATUS] == 200"
     alerts:
       - type: pushover
-  - name: ${ADDITIONAL_MONITORING_NAME_2}
+  - name: balticsea
     group: remote
     ui:
       hide-hostname: true
       hide-url: true
-    url: https://${ADDITIONAL_MONITORING_DOMAIN_2}
+    url: https://balticsea.com.pl
     interval: 1m
     client:
       dns-resolver: tcp://1.1.1.1:53
@@ -63,12 +63,12 @@ endpoints:
       - "[STATUS] == 200"
     alerts:
       - type: pushover
-  - name: ${ADDITIONAL_MONITORING_NAME_3}
+  - name: green-oasis
     group: remote
     ui:
       hide-hostname: true
       hide-url: true
-    url: https://${ADDITIONAL_MONITORING_DOMAIN_3}
+    url: https://green-oasis.eu
     interval: 1m
     client:
       dns-resolver: tcp://1.1.1.1:53
@@ -76,12 +76,12 @@ endpoints:
       - "[STATUS] == 200"
     alerts:
       - type: pushover
-  - name: ${ADDITIONAL_MONITORING_NAME_4}
+  - name: indexpomerania
     group: remote
     ui:
       hide-hostname: true
       hide-url: true
-    url: https://${ADDITIONAL_MONITORING_DOMAIN_4}
+    url: https://indexpomerania.com
     interval: 1m
     client:
       dns-resolver: tcp://1.1.1.1:53
