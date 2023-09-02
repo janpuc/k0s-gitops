@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 PUSHOVER_DEBUG="${PUSHOVER_DEBUG:-"true"}"
-# kubectl port-forward service/sonarr -n default 8989:80
+# kubectl port-forward service/radarr -n default 7878:80
 # export PUSHOVER_TOKEN="";
 # export PUSHOVER_USER_KEY="";
-# export sonarr_eventtype=Download;
-# ./pushover-notify.sh
+# export radarr_eventtype=Download;
+# ./notify.sh
 
 CONFIG_FILE="/config/config.xml" && [[ "${PUSHOVER_DEBUG}" == "true" ]] && CONFIG_FILE="config.xml"
 ERRORS=()
@@ -47,26 +47,25 @@ fi
 #
 # Send Notification on Test
 #
-if [[ "${sonarr_eventtype:-}" == "Test" ]]; then
+if [[ "${radarr_eventtype:-}" == "Test" ]]; then
     PUSHOVER_TITLE="Test Notification"
-    PUSHOVER_MESSAGE="Howdy this is a test notification from ${sonarr_instancename:-Sonarr}"
+    PUSHOVER_MESSAGE="Howdy this is a test notification from ${PUSHOVER_STARR_INSTANCE_NAME}"
 fi
 
 #
 # Send notification on Download or Upgrade
 #
-if [[ "${sonarr_eventtype:-}" == "Download" ]]; then
-    printf -v PUSHOVER_TITLE "New Episode %s" "${sonarr_eventtype:-Download}"
-    printf -v PUSHOVER_MESSAGE "<b>%s (S%02dE%02d)</b><small>\n%s</small><small>\n\n<b>Quality:</b> %s</small><small>\n<b>Client:</b> %s</small><small>\n<b>Upgrade:</b> %s</small>" \
-        "${sonarr_series_title:-"Mystery Science Theater 3000"}" \
-        "${sonarr_episodefile_seasonnumber:-"8"}" \
-        "${sonarr_episodefile_episodenumbers:-"20"}" \
-        "${sonarr_episodefile_episodetitles:-"Space Mutiny"}" \
-        "${sonarr_episodefile_quality:-"DVD"}" \
-        "${sonarr_download_client:-"qbittorrent"}" \
-        "${sonarr_isupgrade:-"False"}"
-    printf -v PUSHOVER_URL "%s/series/%s" "${sonarr_applicationurl:-localhost}" "${sonarr_series_titleslug:-""}"
-    printf -v PUSHOVER_URL_TITLE "View series in %s" "${sonarr_instancename:-Sonarr}"
+if [[ "${radarr_eventtype:-}" == "Download" ]]; then
+    printf -v PUSHOVER_TITLE "New Movie %s" "${radarr_eventtype:-Download}"
+    printf -v PUSHOVER_MESSAGE "<b>%s (%s)</b><small>\n%s</small><small>\n\n<b>Quality:</b> %s</small><small>\n<b>Client:</b> %s</small><small>\n<b>Upgrade:</b> %s</small>" \
+        "${radarr_movie_title:-"The Lord of the Rings: The Return of the King"}" \
+        "${radarr_movie_year:-"2003"}" \
+        "${radarr_movie_overview:-"Movie plot summary not available"}" \
+        "${radarr_moviefile_quality:-"Bluray-1080p"}" \
+        "${radarr_download_client:-"qbittorrent"}" \
+        "${radarr_isupgrade:-"False"}"
+    printf -v PUSHOVER_URL "%s/movie/%s" "${radarr_applicationurl:-localhost}" "${radarr_movie_tmdbid:-"122"}"
+    printf -v PUSHOVER_URL_TITLE "View movie in %s" "${radarr_instancename:-Radarr}"
 fi
 
 notification=$(jq -n \

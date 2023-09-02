@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sonarr
+  name: radarr
   namespace: media
 spec:
   interval: 30m
@@ -35,22 +35,22 @@ spec:
         imagePullPolicy: IfNotPresent
         envFrom: &envFrom
           - secretRef:
-              name: sonarr-secret
+              name: radarr-secret
     controller:
       annotations:
         reloader.stakater.com/auto: "true"
     image:
-      repository: ghcr.io/onedr0p/sonarr-develop
-      tag: 4.0.0.655@sha256:6d38becb362bd7f1786a284ee94fe7b7d695598d5555c52902e81ad5a34a22ea
+      repository: ghcr.io/onedr0p/radarr-develop
+      tag: 5.0.0.7952@sha256:f62b8d569fafe0068755c1e080c17646fba7829c19c860a34679e7a7a1178227
     env:
       TZ: Europe/Warsaw
       PUSHOVER_DEBUG: "false"
-      SONARR__AUTHENTICATION_METHOD: External
-      SONARR__AUTHENTICATION_REQUIRED: DisabledForLocalAddresses
-      SONARR__INSTANCE_NAME: Sonarr
-      SONARR__PORT: &port 8000
-      SONARR__LOG_LEVEL: info
-      SONARR__THEME: dark
+      RADARR__AUTHENTICATION_METHOD: External
+      RADARR__AUTHENTICATION_REQUIRED: DisabledForLocalAddresses
+      RADARR__INSTANCE_NAME: Radarr
+      RADARR__PORT: &port 8000
+      RADARR__LOG_LEVEL: info
+      RADARR__THEME: dark
     envFrom: *envFrom
     service:
       main:
@@ -97,11 +97,11 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: sonarr-config
+        existingClaim: radarr-config
       scripts:
         enabled: true
         type: configMap
-        name: sonarr-configmap
+        name: radarr-configmap
         subPath: pushover-notify.sh
         mountPath: /scripts/pushover-notify.sh
         defaultMode: 0775
