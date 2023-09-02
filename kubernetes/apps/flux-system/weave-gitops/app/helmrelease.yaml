@@ -28,20 +28,33 @@ spec:
   values:
     adminUser:
       create: true
-      passwordHash: $2a$10$mrf6W0OBYT9vRgx8eP9NDuNy5T7xwLq0wrMADMPFCSUkNXQ1fYCS2
+      createSecret: false
       username: admin
     ingress:
       enabled: true
       annotations:
-        external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
+        external-dns.alpha.kubernetes.io/target: k0s.janpuc.com
         traefik.ingress.kubernetes.io/router.tls: "true"
         traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
         traefik.ingress.kubernetes.io/router.middlewares: security-forwardauth-authelia@kubernetescrd
       hosts:
-        - host: &host "gitops.${SECRET_DOMAIN}"
+        - host: &host gitops.janpuc.com
           paths:
             - path: /
               pathType: Prefix
       tls:
         - hosts:
             - *host
+    networkPolicy:
+      create: false
+    metrics:
+      enabled: true
+    rbac:
+      create: true
+      impersonationResourceNames: ["admin"]
+      additionalRules:
+        - apiGroups: ["infra.contrib.fluxcd.io"]
+          resources: ["terraforms"]
+          verbs: ["get", "list", "patch"]
+    podAnnotations:
+      secret.reloader.stakater.com/reload: cluster-user-auth
