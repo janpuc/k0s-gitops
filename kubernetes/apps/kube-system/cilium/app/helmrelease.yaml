@@ -45,6 +45,18 @@ spec:
         enabled: true
       ui:
         enabled: true
+        ingress:
+          enabled: true
+          annotations:
+            external-dns.alpha.kubernetes.io/target: k0s.janpuc.com
+            traefik.ingress.kubernetes.io/router.tls: "true"
+            traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+            traefik.ingress.kubernetes.io/router.middlewares: security-forwardauth-authelia@kubernetescrd
+          hosts:
+            - &host hubble.janpuc.com
+          tls:
+            - hosts:
+                - *host
     ipv4NativeRoutingCIDR: 10.32.0.0/16
     k8sServiceHost: ${SINGLE_NODE_PRIVATE_IP}
     k8sServicePort: 6443
