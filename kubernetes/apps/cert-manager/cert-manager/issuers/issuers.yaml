@@ -7,19 +7,19 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: ${SECRET_ACME_EMAIL}
+    email: jan.pucilowski99@gmail.com
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
       - dns01:
           cloudflare:
-            email: ${SECRET_ACME_EMAIL}
+            email: jan.pucilowski99@gmail.com
             apiTokenSecretRef:
               name: cloudflare-secret
               key: api-token
         selector:
           dnsZones:
-            - ${SECRET_DOMAIN}
+            - janpuc.com
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/clusterissuer_v1.json
 apiVersion: cert-manager.io/v1
@@ -29,16 +29,16 @@ metadata:
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: ${SECRET_ACME_EMAIL}
+    email: jan.pucilowski99@gmail.com
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
       - dns01:
           cloudflare:
-            email: ${SECRET_ACME_EMAIL}
+            email: jan.pucilowski99@gmail.com
             apiTokenSecretRef:
               name: cloudflare-secret
               key: api-token
         selector:
           dnsZones:
-            - ${SECRET_DOMAIN}
+            - janpuc.com
