@@ -33,3 +33,6 @@ spec:
       clusterIP: 10.96.0.10
     serviceAccount:
       create: true
+    deployment:
+      annotations:
+        reloader.stakater.com/auto: "true"
