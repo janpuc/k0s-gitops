@@ -25,6 +25,9 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  dependsOn:
+    - name: local-path-provisioner
+      namespace: kube-system
   values:
     controller:
       type: statefulset
@@ -33,7 +36,7 @@ spec:
       tag: 3.0.1
     env:
       TZ: Europe/Warsaw
-      APP_URL: https://invite.${SECRET_DOMAIN}
+      APP_URL: https://invite.janpuc.com
       DISABLE_BUILTIN_AUTH: "true"
     service:
       main:
@@ -44,12 +47,12 @@ spec:
       main:
         enabled: true
         annotations:
-          external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/target: k0s.janpuc.com
           traefik.ingress.kubernetes.io/router.tls: "true"
           traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
           traefik.ingress.kubernetes.io/router.middlewares: security-forwardauth-authelia@kubernetescrd
         hosts:
-          - host: &host invite.${SECRET_DOMAIN}
+          - host: &host invite.janpuc.com
             paths:
               - path: /
                 pathType: Prefix
