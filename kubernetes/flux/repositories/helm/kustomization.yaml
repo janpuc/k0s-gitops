@@ -13,6 +13,7 @@ resources:
   - ./external-dns.yaml
   - ./external-secrets.yaml
   - ./jetstack.yaml
+  - ./kyverno.yaml
   - ./metallb.yaml
   - ./metrics-server.yaml
   - ./prometheus-community.yaml
