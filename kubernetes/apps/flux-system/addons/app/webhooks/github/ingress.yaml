@@ -5,10 +5,10 @@ metadata:
   name: webhook-receiver
   namespace: flux-system
   annotations:
-    external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
+    external-dns.alpha.kubernetes.io/target: k0s.janpuc.com
 spec:
   rules:
-    - host: &host flux-webhook.${SECRET_DOMAIN}
+    - host: &host flux-webhook.janpuc.com
       http:
         paths:
           - path: /hook/
