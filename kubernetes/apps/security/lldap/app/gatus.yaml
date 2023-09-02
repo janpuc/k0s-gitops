@@ -16,7 +16,7 @@ data:
           hide-url: true
         url: http://lldap.security.svc.cluster.local:8000
         headers:
-          Host: lldap.${SECRET_DOMAIN}
+          Host: lldap.janpuc.com
         interval: 1m
         conditions:
           - "[STATUS] == 200"

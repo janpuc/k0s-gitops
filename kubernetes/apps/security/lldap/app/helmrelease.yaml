@@ -45,6 +45,7 @@ spec:
       LLDAP_HTTP_PORT: &port 8000
       LLDAP_HTTP_URL: https://lldap.${SECRET_DOMAIN}
       LLDAP_LDAP_PORT: &ldapPort 30389
+      LLDAP_LDAP_BASE_DN: dc=janpuc,dc=com
     envFrom: *envFrom
     service:
       main:
@@ -58,12 +59,12 @@ spec:
       main:
         enabled: true
         annotations:
-          external-dns.alpha.kubernetes.io/target: k0s.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/target: k0s.janpuc.com
           traefik.ingress.kubernetes.io/router.tls: "true"
           traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
           traefik.ingress.kubernetes.io/router.middlewares: security-forwardauth-authelia@kubernetescrd
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.janpuc.com"
             paths:
               - path: /
                 pathType: Prefix
