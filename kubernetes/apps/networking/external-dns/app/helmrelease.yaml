@@ -41,4 +41,8 @@ spec:
     sources: ["crd", "ingress"]
     txtOwnerId: default
     txtPrefix: k0s.
-    domainFilters: ["${SECRET_DOMAIN}"]
+    domainFilters: ["janpuc.com"]
+    serviceMonitor:
+      enabled: true
+    podAnnotations:
+      secret.reloader.stakater.com/reload: external-dns-cloudflare-secret
