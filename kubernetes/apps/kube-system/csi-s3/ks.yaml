@@ -6,6 +6,8 @@ metadata:
   name: cluster-apps-csi-s3
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cluster-apps-external-secrets-stores
   path: ./kubernetes/apps/kube-system/csi-s3/app
   prune: true
   sourceRef:
