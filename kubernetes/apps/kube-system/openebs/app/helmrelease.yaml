@@ -32,3 +32,5 @@ spec:
       baseDir: "/var/openebs"
     localprovisioner:
       basePath: "/var/openebs/local"
+    nfs-provisioner:
+      enabled: true
