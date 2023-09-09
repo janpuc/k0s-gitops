@@ -4,21 +4,9 @@ module.exports = {
     // prowlarrUrl: "http://prowlarr.default.svc.cluster.local",
     // prowlarrApiKey: "{{ .PROWLARR__API_KEY }}",
     // prowlarrTag: "cross-seed",
-    // torznab: [
-    //   "http://prowlarr.default.svc.cluster.local/1/api?apikey={{ .PROWLARR__API_KEY }}",  // fl
-    //   "http://prowlarr.default.svc.cluster.local/2/api?apikey={{ .PROWLARR__API_KEY }}",  // avz
-    //   "http://prowlarr.default.svc.cluster.local/8/api?apikey={{ .PROWLARR__API_KEY }}",  // ptp
-    //   "http://prowlarr.default.svc.cluster.local/11/api?apikey={{ .PROWLARR__API_KEY }}", // btn
-    //   "http://prowlarr.default.svc.cluster.local/20/api?apikey={{ .PROWLARR__API_KEY }}", // tl
-    //   "http://prowlarr.default.svc.cluster.local/21/api?apikey={{ .PROWLARR__API_KEY }}", // blu
-    //   "http://prowlarr.default.svc.cluster.local/26/api?apikey={{ .PROWLARR__API_KEY }}", // mtv
-    //   "http://prowlarr.default.svc.cluster.local/40/api?apikey={{ .PROWLARR__API_KEY }}", // uhdb
-    //   "http://prowlarr.default.svc.cluster.local/42/api?apikey={{ .PROWLARR__API_KEY }}", // phd
-    //   "http://prowlarr.default.svc.cluster.local/45/api?apikey={{ .PROWLARR__API_KEY }}", // bhd
-    //   "http://prowlarr.default.svc.cluster.local/47/api?apikey={{ .PROWLARR__API_KEY }}", // ar
-    //   "http://prowlarr.default.svc.cluster.local/48/api?apikey={{ .PROWLARR__API_KEY }}", // ant
-    //   "http://prowlarr.default.svc.cluster.local/49/api?apikey={{ .PROWLARR__API_KEY }}", // athr
-    // ],
+    torznab: [
+      "http://prowlarr.default.svc.cluster.local/1/api?apikey={{ .PROWLARR__API_KEY }}",  // spd
+    ],
     action: "inject",
     includeEpisodes: true,
     includeNonVideos: true,
