@@ -59,6 +59,8 @@ spec:
     args: [
       "prune",
       "--exclude-category", "manual",
+      "--exclude-category", "music.collection",
+      "--exclude-category", "music.import",
       "--include-tag", "unregistered",
       # "--dry-run",
       "--server", "qbittorrent.media.svc.cluster.local",

@@ -26,7 +26,7 @@ spec:
   uninstall:
     keepHistory: false
   dependsOn:
-    - name: local-path-provisioner
+    - name: openebs
       namespace: kube-system
   values:
     controller:
@@ -39,6 +39,16 @@ spec:
       TZ: Europe/Warsaw
       QBITTORRENT__PORT: &port 8000
       QBITTORRENT__BT_PORT: &bittorrentPort 50413
+      QBT_Preferences__WebUI__AlternativeUIEnabled: false
+      QBT_Preferences__WebUI__AuthSubnetWhitelistEnabled: true
+      QBT_Preferences__WebUI__AuthSubnetWhitelist: 10.0.0.0/8
+      QBT_Preferences__WebUI__LocalHostAuth: false
+      QBT_BitTorrent__Session__Interface: eth0
+      QBT_BitTorrent__Session__InterfaceAddress:
+        valueFrom:
+          fieldRef:
+            fieldPath: status.podIP
+      QBT_BitTorrent__Session__InterfaceName: eth0
     service:
       main:
         ports:

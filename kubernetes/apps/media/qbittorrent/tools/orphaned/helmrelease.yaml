@@ -34,8 +34,10 @@ spec:
       tag: v0.9.3
     args: [
       "orphaned",
-      "--exclude-pattern", "*/manual/*",
       "--exclude-pattern", "*_unpackerred",
+      "--exclude-pattern", "*/manual/*",
+      "--exclude-pattern", "*/music.import/*",
+      "--dry-run",
       "--server", "qbittorrent.media.svc.cluster.local",
       "--port", "8000"
     ]
