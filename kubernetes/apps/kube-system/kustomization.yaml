@@ -13,4 +13,5 @@ resources:
   - ./external-secrets/ks.yaml
   - ./local-path-provisioner/ks.yaml
   - ./metrics-server/ks.yaml
+  - ./openebs/ks.yaml
   - ./reloader/ks.yaml
