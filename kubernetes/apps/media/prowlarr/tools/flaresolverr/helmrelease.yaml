@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/flaresolverr/flaresolverr
-      tag: v3.3.4
+      tag: v3.3.7
     env:
       TZ: Europe/Warsaw
       LOG_LEVEL: info
