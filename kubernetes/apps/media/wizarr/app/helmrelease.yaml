@@ -33,7 +33,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/wizarrrr/wizarr
-      tag: 3.4.8
+      tag: 3.5.2
     env:
       TZ: Europe/Warsaw
       APP_URL: https://invite.janpuc.com
