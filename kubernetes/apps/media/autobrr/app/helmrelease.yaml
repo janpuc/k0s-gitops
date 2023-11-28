@@ -37,7 +37,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/autobrr/autobrr
-      tag: develop@sha256:03d0b2b34b0aeeef8788b1014dc1cbb0c6753f917bd6fc54a4d885ced20d1ec2
+      tag: develop@sha256:cccd87bc0cea0c285a568921f0d0370ae33249aae8f15b6a1f04262497a226ca
     env:
       AUTOBRR__CHECKFORUPDATES: "false"
       AUTOBRR__HOST: 0.0.0.0
