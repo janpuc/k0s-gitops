@@ -35,7 +35,7 @@ spec:
         schedule: "@hourly"
     initContainers:
       01-tag:
-        image: ghcr.io/buroa/qbittools:v0.10.1
+        image: ghcr.io/buroa/qbittools:v0.10.2
         imagePullPolicy: IfNotPresent
         args: [
           "tagging",
@@ -55,7 +55,7 @@ spec:
             subPath: config.yaml
     image:
       repository: ghcr.io/buroa/qbittools
-      tag: v0.10.1
+      tag: v0.10.2
     args: [
       "prune",
       "--exclude-category", "manual",
