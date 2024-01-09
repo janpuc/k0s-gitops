@@ -38,7 +38,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: ghcr.io/authelia/authelia
-      tag: master@sha256:8ab44499fdefe9326b7ae7b77696608e5af19aace14c18188cdd477f711a6ca9
+      tag: master@sha256:591815935f07d533fccd25f776ea9c3ba65c7251f6be9503e6832118a95b3c8f
     args: ["--config", "/config/configuration.yaml", "--config.experimental.filters", "expand-env"]
     env:
       AUTHELIA_AUTHENTICATION_BACKEND_LDAP_ADDITIONAL_GROUPS_DN: ou=groups
